@@ -50,7 +50,7 @@
 
 **1.5 Source Code Demo Project Build:**
 
-1.5.1 API start: 
+1.5.1 API start: (only can view the Swagger API )
 
 a. back end code start
 
@@ -58,8 +58,20 @@ b. Data base start
 
 c. test the api with post man or Swagger
 
-1.5.2 Admn System start(CRM Vue)
+```bash
+git clone https://github.com/newbee-ltd/newbee-mall-api.git
+```
 
-1.5.3 Client Site Start(Ecormance Sites)
+
+
+1.5.2 Admn System start(CRM Vue):API + Front end two in one
+
+```
+git clone https://github.com/newbee-ltd/newbee-mall-manage.git
+```
+
+
+
+1.5.3 Client Site Start(Ecormance Sites) No this project
 
 ##
