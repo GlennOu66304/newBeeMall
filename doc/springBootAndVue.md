@@ -1,10 +1,27 @@
-## Project Start:
+
+
+
+
+
+
+## 0.Project Start:
 
 1.follow the tutorial finish the project
 
 2.set up the initial starter to build the project
 
+3.Read the code: 
 
+3.1 paste the code into the 
+
+
+
+
+1.build the reading note for every section as md file(import from the simple read)
+
+2.put it under the doc folder
+
+3.folder in the java is the package, file in the folder is the class
 
 ## Process
 
@@ -29,6 +46,26 @@
 1.2.1 Starter Project Build
 
 1.2.2 API build
+
+1.2.2.1Model(entity User) --->Controller(CRUD) -->Routes --->Swagger Test(config Swagger2Config)
+
+1.2.2.2Routes(CRUD):
+
+C:@PostMapping("/users") POST
+
+
+
+R:@GetMapping("/users") GET & @PutMapping("/users/{id}")
+
+
+
+U:@PutMapping("/users/{id}") UPDATE
+
+D:@DeleteMapping("/users/{id}") DELETE
+
+
+
+
 
 1.2.3  Login API build
 
