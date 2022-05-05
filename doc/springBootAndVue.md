@@ -72,6 +72,6 @@ git clone https://github.com/newbee-ltd/newbee-mall-manage.git
 
 
 
-1.5.3 Client Site Start(Ecormance Sites) No this project
+1.5.3 Client Site Start(Ecormance Sites) No this project, need to build this project with the API given
 
 ##
