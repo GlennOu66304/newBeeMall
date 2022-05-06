@@ -8,12 +8,15 @@
  */
 package ltd.newbee.mall.service.impl;
 
+import ltd.newbee.mall.api.param.MallUserUpdateParam;
+import ltd.newbee.mall.common.NewBeeMallException;
 import ltd.newbee.mall.common.ServiceResultEnum;
 import ltd.newbee.mall.dao.MallUserMapper;
 import ltd.newbee.mall.dao.NewBeeMallUserTokenMapper;
 import ltd.newbee.mall.entity.MallUser;
 import ltd.newbee.mall.entity.MallUserToken;
 import ltd.newbee.mall.service.NewBeeMallUserService;
+import ltd.newbee.mall.util.MD5Util;
 import ltd.newbee.mall.util.NumberUtil;
 import ltd.newbee.mall.util.SystemUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,17 +31,19 @@ public class NewBeeMallUserServiceImpl implements NewBeeMallUserService {
     private MallUserMapper mallUserMapper;
     @Autowired
     private NewBeeMallUserTokenMapper newBeeMallUserTokenMapper;
-
+//login
     @Override
     public String login(String loginName, String passwordMD5) {
         MallUser user = mallUserMapper.selectByLoginNameAndPasswd(loginName, passwordMD5);
+//        // check if there is an user
         if (user != null) {
             if (user.getLockedFlag() == 1) {
                 return ServiceResultEnum.LOGIN_USER_LOCKED_ERROR.getResult();
             }
             //登录后即执行修改token的操作
-            String token = getNewToken(System.currentTimeMillis() + "", user.getUserId());
-            MallUserToken mallUserToken = newBeeMallUserTokenMapper.selectByPrimaryKey(user.getUserId());
+            String token = getNewToken(System.currentTimeMillis() + "", user.getUserId());//string number
+
+            MallUserToken mallUserToken = newBeeMallUserTokenMapper.selectByPrimaryKey(user.getUserId());//token generate
             //当前时间
             Date now = new Date();
             //过期时间
@@ -59,6 +64,7 @@ public class NewBeeMallUserServiceImpl implements NewBeeMallUserService {
                 mallUserToken.setUpdateTime(now);
                 mallUserToken.setExpireTime(expireTime);
                 //更新
+//                return the token
                 if (newBeeMallUserTokenMapper.updateByPrimaryKeySelective(mallUserToken) > 0) {
                     //修改成功后返回
                     return token;
@@ -80,4 +86,29 @@ public class NewBeeMallUserServiceImpl implements NewBeeMallUserService {
         String src = timeStr + userId + NumberUtil.genRandomNum(4);
         return SystemUtil.genToken(src);
     }
+
+    @Override
+    public Boolean updateUserInfo(MallUserUpdateParam mallUser, Long userId) {
+        MallUser user = mallUserMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            NewBeeMallException.fail(ServiceResultEnum.DATA_NOT_EXIST.getResult());
+        }
+        user.setNickName(mallUser.getNickName());
+        //user.setPasswordMd5(mallUser.getPasswordMd5());
+        //若密码为空字符，则表明用户不打算修改密码，使用原密码保存
+        if (!MD5Util.MD5Encode("", "UTF-8").equals(mallUser.getPasswordMd5())){
+            user.setPasswordMd5(mallUser.getPasswordMd5());
+        }
+        user.setIntroduceSign(mallUser.getIntroduceSign());
+        if (mallUserMapper.updateByPrimaryKeySelective(user) > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean logout(Long userId) {
+        return newBeeMallUserTokenMapper.deleteByPrimaryKey(userId) > 0;
+    }
+
 }

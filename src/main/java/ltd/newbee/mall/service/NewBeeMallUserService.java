@@ -8,6 +8,8 @@
  */
 package ltd.newbee.mall.service;
 
+import ltd.newbee.mall.api.param.MallUserUpdateParam;
+
 public interface NewBeeMallUserService {
 
 
@@ -19,4 +21,18 @@ public interface NewBeeMallUserService {
      * @return
      */
     String login(String loginName, String passwordMD5);
+    /**
+     * 用户信息修改
+     *
+     * @param mallUser
+     * @return
+     */
+    Boolean updateUserInfo(MallUserUpdateParam mallUser, Long userId);
+
+    /**
+     * 登出接口
+     * @param userId
+     * @return
+     */
+    Boolean logout(Long userId);
 }

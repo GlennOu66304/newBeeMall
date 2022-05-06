@@ -1,5 +1,38 @@
 
 
+```
+8ddbf6ea32587785646f3e82818bad00
+```
+
+## Goal:
+
+1.login get the token(get the token)
+
+2.change the user information(send the token to the server and verify the token)
+
+3.log out the user information(delete the token)
+
+
+
+## Process
+
+Model --> View -->
+
+1. 1.api
+2. 1.paramas
+
+2.api:routes, overview controller
+
+3.service handle the specific controller
+
+# [8080 port already taken issue when trying to redeploy project from Spring Tool Suite IDE](https://stackoverflow.com/questions/40118878/8080-port-already-taken-issue-when-trying-to-redeploy-project-from-spring-tool-s)
+
+```
+sudo lsof -i tcp:8080
+
+kill -15 PID (PID number)
+```
+
 
 
 ## install the Lombok plugin
@@ -79,9 +112,9 @@ and Lombok version:
 
 1.2.2 API build
 
-1.2.2.1Model(entity User) --->Controller(CRUD) -->Routes --->Swagger Test(config Swagger2Config)
+1.2.2.1Model(entity User) --->Controller(CRUD:api folder) -->Routes(api folder) --->Swagger Test(config> Swagger2Config)
 
-1.2.2.2Routes(CRUD):
+1.2.2.2Routes(CRUD): (api folder )
 
 C:@PostMapping("/users") POST
 
@@ -96,6 +129,20 @@ U:@PutMapping("/users/{id}") UPDATE
 D:@DeleteMapping("/users/{id}") DELETE
 
 
+
+1.2.2.3 Other folder check:
+
+Common: regular used common varible
+
+DAO folder:Api request
+
+Service folder:Something Else
+
+Util:Tools MD5 Package
+
+Application.properties:Data base connect
+
+[主体目录结构如下：](https://juejin.cn/book/6844733826191589390/section/6844733826279669774)
 
 
 
@@ -148,8 +195,10 @@ git clone https://github.com/newbee-ltd/newbee-mall-manage.git
 ## UI and Demo image
 
 1. 1. 1.it is a H5 page in the front end
-   2. 2.Demo image:
+   2. 2.Front EndDemo image:
    3. [Vue3 Shop](http://47.99.134.126:5008/#/home)
+   4. 2.1 Back end Swagger Testing:
+   5. [新蜂商城接口文档](http://backend-api-01.newbee.ltd/swagger-ui.html)
 
 3.Source Code
 
