@@ -21,13 +21,13 @@ and Lombok version:
 
 4.When you see the err, you can right click then add the maven package, after that. You need to restart the IDEA to see the effect.
 
-## Goal
+## Login API section
 
 1.Login API build
 
 2.TEST it in the Swagger
 
-
+3.download the section of the code in the baidu drive to test it
 
 ##Process
 
