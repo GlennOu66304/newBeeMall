@@ -2,7 +2,40 @@
 
 
 
+## install the Lombok plugin
 
+1.confirm the 
+
+IDEA version: (Runtime version: 11.0.14.1+1-b1751.46 x86_64)2021.3.3
+
+and Lombok version:
+
+2. 2.install the plugin from the IDEA Plugin Market or from the local enviroment;
+3. 3.Solution:
+4. Choose the IDEA version:2020.2.4 
+5. [Version 2020.2](https://www.jetbrains.com/idea/download/other.html)
+6. And lombok version:[0.34-2020.2](https://plugins.jetbrains.com/plugin/6317-lombok/versions/stable/107975)
+7. [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/versions)
+
+[Setting up Lombok with Eclipse and Intellij](https://www.baeldung.com/lombok-ide)
+
+4.When you see the err, you can right click then add the maven package, after that. You need to restart the IDEA to see the effect.
+
+## Goal
+
+1.Login API build
+
+2.TEST it in the Swagger
+
+
+
+##Process
+
+1.Control
+
+2.Router
+
+3.Swagger Test
 
 ## 0.Project Start:
 
@@ -13,7 +46,6 @@
 3.Read the code: 
 
 3.1 paste the code into the 
-
 
 
 
@@ -111,4 +143,17 @@ git clone https://github.com/newbee-ltd/newbee-mall-manage.git
 
 1.5.3 Client Site Start(Ecormance Sites) No this project, need to build this project with the API given
 
-##
+
+
+## UI and Demo image
+
+1. 1. 1.it is a H5 page in the front end
+   2. 2.Demo image:
+   3. [Vue3 Shop](http://47.99.134.126:5008/#/home)
+
+3.Source Code
+
+Front End:**[newbee-mall-vue3-app](https://github.com/newbee-ltd/newbee-mall-vue3-app)**
+
+Back End: [newbee-mall-api](https://github.com/newbee-ltd/newbee-mall-api)
+
