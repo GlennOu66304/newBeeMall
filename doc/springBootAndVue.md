@@ -1,10 +1,18 @@
 
 
-```
-8ddbf6ea32587785646f3e82818bad00
+
+
+# [Description: Field ud in com.yjj.service.impl.UserServiceImpl required a bean of type 'com.yjj.dao.UserDao' that could not be found. Action: Consider defining a bean of type 'com.yjj.dao.UserDao'](https://www.cnblogs.com/leafarmyarmy/p/10564509.html)
+
+```java
+`@ComponentScan(basePackages = {"com.yjj.dao","com.yjj.service","com.yjj.controller"})
 ```
 
-## Goal:
+
+
+Or filled the file in the service impl
+
+## Login update account log out:
 
 1.login get the token(get the token)
 
@@ -148,7 +156,19 @@ Application.properties:Data base connect
 
 1.2.3  Login API build
 
-1.2.4 etc...
+1.2.4 Home Page API
+
+1.2.5 Category API
+
+1.2.6 ShopItem Search API
+
+1.2.7 Shopping Cart API
+
+1.2.8 Order generate API
+
+1.2.9 Order Payment, Details,List API
+
+1.
 
 
 
@@ -205,4 +225,10 @@ git clone https://github.com/newbee-ltd/newbee-mall-manage.git
 Front End:**[newbee-mall-vue3-app](https://github.com/newbee-ltd/newbee-mall-vue3-app)**
 
 Back End: [newbee-mall-api](https://github.com/newbee-ltd/newbee-mall-api)
+
+
+
+## Learning Tips
+
+When you finish an API, then build the this part of the UI Page in the front End
 

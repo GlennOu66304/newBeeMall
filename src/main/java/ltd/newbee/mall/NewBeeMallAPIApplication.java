@@ -11,7 +11,7 @@ package ltd.newbee.mall;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import org.springframework.context.annotation.ComponentScan;
 /**
  * @author 13
  * @qq交流群 796794009
@@ -19,6 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @link https://github.com/newbee-ltd
  */
 @MapperScan("ltd.newbee.mall.dao")
+//@ComponentScan(basePackages ={"ltd.newbee.mall.service"})
 @SpringBootApplication
 public class NewBeeMallAPIApplication {
 
