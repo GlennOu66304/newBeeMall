@@ -1,5 +1,25 @@
 
 
+## Goal
+
+API Search resule Page display
+
+
+
+## Process
+
+1.vo--> api file
+
+2.service:impl --> service
+
+3.DAO:DAO--> mapper.xml
+
+4.enity
+
+5.Constants
+
+
+
 
 
 # [Mybatis - Invalid bound statement (not found)](https://stackoverflow.com/questions/55000770/mybatis-invalid-bound-statement-not-found)
@@ -169,6 +189,10 @@ Service folder:Something Else: implies ---> Service file
 Util:Tools MD5 Package
 
 Api:-->params-->Vo-->API
+
+
+
+
 
 Application.properties:Data base connect
 
