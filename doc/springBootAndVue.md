@@ -2,6 +2,26 @@
 
 
 
+# [Mybatis - Invalid bound statement (not found)](https://stackoverflow.com/questions/55000770/mybatis-invalid-bound-statement-not-found)
+
+Way1
+
+```java
+@MapperScan("com.jjs.videoservice.dao") 
+```
+
+
+
+Way2
+
+Check the mapper in the resource folder
+
+```
+检查mapping文件
+```
+
+[Invalid bound statement (not found) 解决思路](https://blog.csdn.net/qq_27818541/article/details/107236404)
+
 # [Description: Field ud in com.yjj.service.impl.UserServiceImpl required a bean of type 'com.yjj.dao.UserDao' that could not be found. Action: Consider defining a bean of type 'com.yjj.dao.UserDao'](https://www.cnblogs.com/leafarmyarmy/p/10564509.html)
 
 ```java
@@ -10,7 +30,7 @@
 
 
 
-Or filled the file in the service impl
+# Or filled the file in the service impl
 
 ## Login update account log out:
 
@@ -142,11 +162,13 @@ D:@DeleteMapping("/users/{id}") DELETE
 
 Common: regular used common varible
 
-DAO folder:Api request
+DAO folder:Api request ----> resource ---> Mapper --> DAO.xml to process the sql query
 
-Service folder:Something Else
+Service folder:Something Else: implies ---> Service file
 
 Util:Tools MD5 Package
+
+Api:-->params-->Vo-->API
 
 Application.properties:Data base connect
 
