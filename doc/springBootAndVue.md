@@ -1,5 +1,17 @@
 
 
+## IDEA Code Wrapper
+
+```
+You can also right click the gutter (the vertical bar where line number is shown) and select "Use Soft wraps" - thanks to Bajal for comment.
+```
+
+# [Code Wrap IntelliJ?](https://stackoverflow.com/questions/23004520/code-wrap-intellij)
+
+
+
+
+
 ## Goal
 
 API Search resule Page display
